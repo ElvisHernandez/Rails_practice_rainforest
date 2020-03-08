@@ -16,11 +16,15 @@
     <%= form.text_area :comment %>
   </div>
 
-  <div class="field">
-    <%= form.label :product_id %>
-    <%= form.text_field :product_id %>
-  </div>
-
+  <% if @product.nil? %>
+    <div class="field">
+      <%= form.label :product_id %>
+      <%= form.text_field :product_id %>
+    </div>
+  <% else %>
+    <%= form.label :product_id %><br />
+    <%= form.text_field :product_id, disabled: true, value: @product.id %>
+  <% end %>
   <div class="actions">
     <%= form.submit %>
   </div>

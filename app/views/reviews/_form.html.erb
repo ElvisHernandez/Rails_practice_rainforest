@@ -22,8 +22,7 @@
       <%= form.text_field :product_id %>
     </div>
   <% else %>
-    <%= form.label :product_id %><br />
-    <%= form.text_field :product_id, disabled: true, value: @product.id %>
+    <%= form.hidden_field :product_id, disabled: true, value: @product_id %>
   <% end %>
   <div class="actions">
     <%= form.submit %>
